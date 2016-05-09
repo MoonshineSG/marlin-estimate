@@ -19,9 +19,9 @@ at the end of the gcode file file before uploading it to Octoprint.
 
 https://github.com/MoonshineSG/OctoPrint-Mobile (an iOS Octoprint UI) makes use of this to provide a better estimation.
 
-The mobile ui plugin adds the time waiting for extruders to heat up, by making use of M808 start custom action. This needs Marlin firmware change to handle M808
- (which will echo whatever parmeters sent with M808 prefixed with //action: - see https://github.com/MoonshineSG/Marlin/blob/RCBugFix/Marlin/Marlin_main.cpp#L6311 and https://github.com/MoonshineSG/Marlin/blob/RCBugFix/Marlin/Marlin_main.cpp#L7128)
-
+The mobile ui plugin adds the time waiting for extruders to heat up, by making use of M808 start custom action. 
+Add `M808 start` as the last line in the custom starting script after the bed & nozzle warm up commands M190, M109.
+This needs Marlin firmware change to handle M808 (which will echo whatever parmeters sent with M808 prefixed with //action: - see https://github.com/MoonshineSG/Marlin/blob/RCBugFix/Marlin/Marlin_main.cpp#L6311 and https://github.com/MoonshineSG/Marlin/blob/RCBugFix/Marlin/Marlin_main.cpp#L7128)
 
 
 gcode_estimate compiled for OSX El Capitain (10.11.4)
