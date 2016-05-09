@@ -346,9 +346,9 @@ void manage_inactivity2() {
   block_t *block = plan_get_current_block();
   if (block != NULL) {
     blocks++;
-    if (blocks % 100000 == 0) {
-      fprintf(stderr, ".");
-    }
+    //if (blocks % 100000 == 0) {
+    //  fprintf(stderr, ".");
+    //}
     //		if(blocks > 10) exit(0);
     //		printf("S: %lu in: %lu nom: %lu out: %lu ac: %lu\n",
     //block->step_event_count, block->initial_rate, block->nominal_rate,
