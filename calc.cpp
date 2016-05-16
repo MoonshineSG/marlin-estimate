@@ -226,7 +226,7 @@ double total_time = 0;
 int total_g = 0, total_m = 0;
 
 void process_commands() {
-  unsigned long codenum; // throw away variable
+  //unsigned long codenum; // throw away variable
 
   if (code_seen('G')) {
     total_g++;
@@ -241,6 +241,7 @@ void process_commands() {
       } else
         printf("STOPPED!!");
     // break;
+      /*
     case 4: // G4 dwell
       codenum = 0;
       if (code_seen('P'))
@@ -251,8 +252,9 @@ void process_commands() {
       total_time += codenum / 1000.0;
       break;
     case 28: // G28 Home all Axis one at a time
-      total_time += 5; // 5 seconds to home
+      //total_time += 5; // 5 seconds to home
       break;
+    */
     case 90: // G90
       relative_mode = false;
       break;
