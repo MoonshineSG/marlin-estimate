@@ -427,8 +427,12 @@ int main(int argc, char *argv[]) {
 
   // printf("Processed %d Gcodes and %d Mcodes. %d blocks\n", total_g, total_m,
   // blocks);
-  printf(";estimative time to print: %02d hours %02d min %02d sec\n", hr, min,
-         sec);
+  if (hr == 0) {
+    printf(";estimative time to print: %02d min %02d sec\n", min, sec);
+  } else {
+    printf(";estimative time to print: %02d hours %02d min %02d sec\n", hr, min, sec);
+  }
+  
   printf(";marlin_estimate:%lf\n", total_time);
 
   return 0;
