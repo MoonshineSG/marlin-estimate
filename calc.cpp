@@ -151,6 +151,7 @@ void prepare_move() {
   for (int8_t i = 0; i < NUM_AXIS; i++) {
     current_position[i] = destination[i];
   }
+  
 }
 
 void get_coordinates() {
@@ -425,16 +426,12 @@ int main(int argc, char *argv[]) {
   int hr = min / 60;
   min -= hr * 60;
 
-  // printf("Processed %d Gcodes and %d Mcodes. %d blocks\n", total_g, total_m,
-  // blocks);
-  printf("{");
+  //printf("Processed %d Gcodes and %d Mcodes. %d blocks\n", total_g, total_m, blocks);
   if (hr == 0) {
-    printf("\"human\": \"%02d min %02d sec\"", min, sec);
+    printf("{\"human\": \"%02d min %02d sec\"", min, sec);
   } else {
-    printf("\"human\": \"%02d hours %02d min %02d sec\"", hr, min, sec);
+    printf("{\"human\": \"%02d hours %02d min %02d sec\"", hr, min, sec);
   }
-  printf(", ");
-  printf("\"machine\":%lf", total_time);
-  printf("}");
+  printf(",\"machine\":%lf}", total_time);
   return 0;
 }
