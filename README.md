@@ -8,13 +8,13 @@ Changes:
 - check if the file parameter exists
 - change the output
 
-Used with https://github.com/MoonshineSG/Simplify3D-to-OctoPrint, it will append 
+Used with https://github.com/MoonshineSG/Simplify3D-to-OctoPrint, it will send JSON  
 
 ```
-;estimative time to print: 00 hours 26 min 25 sec
-;marlin_estimate:1585.558610
+{"human": "10 hours 56 min 12 sec","machine":39372.572320}
 ```
-at the end of the gcode file file before uploading it to Octoprint.
+
+as user meta data when uploading it to Octoprint.
 
 
 https://github.com/MoonshineSG/OctoPrint-Mobile (an iOS Octoprint UI) makes use of this to provide a better estimation.
